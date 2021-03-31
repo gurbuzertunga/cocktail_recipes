@@ -1,0 +1,22 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+
+  /* background: brown url(../img/footerbg.jpg) no-repeat center center; */
+  background-size: cover;
+  color: white;
+  border-top: 4px solid brown;
+  letter-spacing: 1.5px;
+}
+
+container a {
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+container a:hover {
+  color: brown;
+}

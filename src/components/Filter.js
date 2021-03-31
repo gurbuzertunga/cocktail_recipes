@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../assets/styles/Filter.css';
 
-const Filter = ({handleFilter, categories}) => (
+const Filter = ({ handleFilter, categories }) => (
   <section className={style.container}>
     <h3 className={style.title}>Categories</h3>
     <ul className={style.list}>
@@ -17,7 +17,7 @@ const Filter = ({handleFilter, categories}) => (
   </section>
 );
 
-Filter.PropTypes = {
+Filter.propTypes = {
   handleFilter: PropTypes.func.isRequired,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };

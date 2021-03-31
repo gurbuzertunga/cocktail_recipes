@@ -2,7 +2,7 @@ import {
   BASE,
   LOOKUP_CAT,
   LOOKUP_ID,
-} from '../../services/cocktaildb';
+} from '../../services/cocktailsdb';
 
 const urlReducer = (state = '', action) => {
   switch (action.type) {

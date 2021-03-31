@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Catalogue from '../containers/Catalogue.container';
-import Header from './Header';
-import Footer from '.Footer';
+import NavBar from './Header';
+import Footer from './Footer';
 import Recipe from '../containers/Recipe.container';
 
 const App = () => (
   <>
-    <Header />
+    <NavBar />
     <Route path="/:id">
       <Recipe />
     </Route>
@@ -16,6 +16,6 @@ const App = () => (
     </Route>
     <Footer />
   </>
-)
+);
 
 export default App;

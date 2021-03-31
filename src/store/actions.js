@@ -22,7 +22,7 @@ export const fetchSuccess = data => ({
   payload: data.cocktails,
 });
 
-export const fetchFail = () => ({
+export const fetchFailure = () => ({
   type: 'RECIPE_FETCH_FAILURE',
 });
 

@@ -2,8 +2,8 @@ import React, { useCallBack } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Axios from 'axios';
-import PropTyppes from 'prop-types';
-import style from '../assets/styles/Recipe.css'
+import PropTypes from 'prop-types';
+import style from '../assets/styles/Recipe.css';
 import * as Actions from '../store/actions';
 import {
   BASE,
@@ -16,12 +16,12 @@ const Recipe = props => {
     recipe,
     isLoading,
     isError,
-    fetchInıt,
+    fetchInit,
     fetchSuccess,
     fetchFailure,
   } = props;
 
-  const fetchRecipe = useCallback(() => {
+  const fetchRecipe = useCallBack(() => {
     fetchInit();
 
     Axios.get(`${BASE}${LOOKUP_ID}${id}`)
@@ -31,7 +31,7 @@ const Recipe = props => {
       .catch(() => {
         fetchFailure();
       });
-  }, [fetchInıt, fetchSuccess, fetchFailure, id]);
+  }, [fetchInit, fetchSuccess, fetchFailure, id]);
 
   React.useEffect(() => {
     fetchRecipe();
@@ -50,15 +50,6 @@ const Recipe = props => {
         measures.push(value);
       }
     });
-  };
-
-  const getVidId = url => {
-    let vidId;
-    if (!isLoading) {
-      vidId = url.split('=').slice(1, 2);
-    };
-
-    return vidId;
   }
 
   return (
@@ -95,7 +86,7 @@ const Recipe = props => {
                 </thead>
                 <tbody>
                   {
-                    ingredients.map((items, i) => (
+                    ingredients.map((item, i) => (
                       <tr key={`${item}${i * 2}`}>
                         <td>{item}</td>
                         <td>{measures[i]}</td>
@@ -139,7 +130,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(Actions.fetchInıt());
   },
   fetchSuccess: data => {
-    dispatch(Actions.fetchSuccess());
+    dispatch(Actions.fetchSuccess(data));
   },
   fetchFailure: () => {
     dispatch(Actions.fetchFailure());

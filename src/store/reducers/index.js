@@ -4,7 +4,6 @@ import filterReducer from './filterReducer';
 import recipesReducer from './recipesReducer';
 import urlReducer from './urlReducer';
 
-
 const rootReducer = combineReducers({
   data: recipesReducer,
   categories: categoriesReducer,

@@ -1,9 +1,9 @@
-import React, { useCallBack } from 'react';
+import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
-import style from '../assets/styles/Catalogue.css'
-import * as Actions from '../store/actions' ;
+import style from '../assets/styles/Catalogue.css';
+import * as Actions from '../store/actions';
 import Filter from '../components/Filter';
 import List from '../components/List';
 import {
@@ -31,7 +31,7 @@ const Catalogue = props => {
   };
 
   const fetchCategories = useCallback(() => {
-      Axios.get(`${BASE}${LOOKUP_CATS}`)
+    Axios.get(`${BASE}${LOOKUP_CATS}`)
       .then(result => {
         getCategories(result.data.drinks);
       })
@@ -42,7 +42,7 @@ const Catalogue = props => {
     () => {
       filterRecipes(filter);
     },
-    [fiter,filterRecipes],
+    [filter, filterRecipes],
   );
 
   const handleFetchRecipes = useCallback(
@@ -55,7 +55,7 @@ const Catalogue = props => {
 
       Axios.get(url)
         .then(result => {
-          fetchSuccess(result.data)
+          fetchSuccess(result.data);
         })
         .catch(() => {
           fetchFailure();
@@ -82,7 +82,9 @@ const Catalogue = props => {
     <div className={style.container}>
       { isError && <p className={style.message}>Something went terribly wrong. We are sorry.</p> }
       { !filter && <p className={style.message}>Please Select A Category</p> }
-      { isLoading ? <p className={style.message}>Loading Cocktail Recipes...</p> : (<Filter categories={categories} handleFilter={handleFilter} />) }
+      { isLoading
+        ? <p className={style.message}>Loading Cocktail Recipes...</p>
+        : (<Filter categories={categories} handleFilter={handleFilter} />) }
       { !isLoading && <List recipes={recipes} handleClick={handleClick} category={filter} /> }
     </div>
   );
@@ -105,6 +107,7 @@ Catalogue.propTypes = {
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   fetchInit: PropTypes.func.isRequired,
   fetchFailure: PropTypes.func.isRequired,
+  fetchSuccess: PropTypes.func.isRequired,
   filter: PropTypes.string,
   getCategories: PropTypes.func.isRequired,
   filterRecipes: PropTypes.func.isRequired,
@@ -127,7 +130,7 @@ const mapDispatchToProps = dispatch => ({
   fetchFailure: () => {
     dispatch(Actions.fetchFailure());
   },
-  filterRecipes: categories => {
+  filterRecipes: category => {
     dispatch(Actions.filterRecipes(category));
   },
   getCategories: categories => {

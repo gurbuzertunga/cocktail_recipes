@@ -18,7 +18,7 @@ const recipesReducer = (state = {}, action) => {
         ...state,
         isLoading: false,
         isError: true,
-      }
+      };
     default:
       return state;
   }
