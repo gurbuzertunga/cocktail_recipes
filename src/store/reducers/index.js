@@ -5,10 +5,10 @@ import recipesReducer from './recipesReducer';
 import urlReducer from './urlReducer';
 
 const rootReducer = combineReducers({
-  data: recipesReducer,
-  categories: categoriesReducer,
-  filter: filterReducer,
-  url: urlReducer,
+  recipesReducer,
+  categoriesReducer,
+  filterReducer,
+  urlReducer,
 });
 
 export default rootReducer;

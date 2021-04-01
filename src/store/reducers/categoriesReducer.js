@@ -1,6 +1,13 @@
-const categoriesReducer = (state = [], action) => {
+const initialState = {
+  data: [],
+};
+
+const categoriesReducer = (state = initialState, action) => {
   if (action.type === 'CATEGORIES') {
-    return [...action.payload];
+    return {
+      ...state,
+      data: [...action.categories],
+    };
   }
 
   return state;

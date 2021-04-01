@@ -4,12 +4,24 @@ import {
   LOOKUP_ID,
 } from '../../services/cocktailsdb';
 
-const urlReducer = (state = '', action) => {
+const initialState = {
+  url: '',
+};
+
+const urlReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FILTER':
-      return `${BASE}${LOOKUP_CAT}${action.payload}`;
+      return {
+        ...state,
+        url: `${BASE}${LOOKUP_CAT}${action.category
+        }`,
+      };
     case 'RECIPE':
-      return `${BASE}${LOOKUP_ID}${action.payload}`;
+      return {
+        ...state,
+        url: `${BASE}${LOOKUP_ID}${action.id
+        }`,
+      };
     default:
       return state;
   }

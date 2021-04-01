@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
 import style from '../assets/styles/Recipe.css';
-import * as Actions from '../store/actions';
+import {
+  fetchInit,
+  fetchSuccess,
+  fetchFailure,
+} from '../store/actions';
 import {
   BASE,
   LOOKUP_ID,
@@ -118,23 +122,12 @@ Recipe.propTypes = {
   fetchSuccess: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  isLoading: state.data.isLoading,
-  isError: state.data.isError,
-  recipe: state.data.recipes[0],
-  url: state.url,
-});
+const mapStateToProps = state => (
+  {
+    isLoading: state.data.isLoading,
+    isError: state.data.isError,
+    recipe: state.data.recipes[0],
+    url: state.urlReducer.url,
+  });
 
-const mapDispatchToProps = dispatch => ({
-  fetchInit: () => {
-    dispatch(Actions.fetchInıt());
-  },
-  fetchSuccess: data => {
-    dispatch(Actions.fetchSuccess(data));
-  },
-  fetchFailure: () => {
-    dispatch(Actions.fetchFailure());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
+export default connect(mapStateToProps, { fetchInit, fetchSuccess, fetchFailure })(Recipe);

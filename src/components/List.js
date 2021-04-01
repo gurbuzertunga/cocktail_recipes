@@ -8,7 +8,7 @@ const List = ({ recipes, handleClick, category }) => (
     <h3 className={style.title}>{category}</h3>
     <div className={style.container}>
       {
-        recipes && recipes.map(recipe => (
+        recipes.data && recipes.data.map(recipe => (
           <Item key={recipe.idDrink} recipe={recipe} handleClick={handleClick} />
         ))
       }

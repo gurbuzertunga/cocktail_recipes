@@ -1,25 +1,25 @@
 export const filterRecipes = category => ({
   type: 'FILTER',
-  payload: category,
+  category,
 });
 
 export const getCategories = categories => ({
   type: 'CATEGORIES',
-  payload: categories,
+  categories,
 });
 
 export const getRecipe = id => ({
   type: 'RECIPE',
-  payload: id,
+  id,
 });
 
-export const fetchInıt = () => ({
+export const fetchInit = () => ({
   type: 'RECIPE_FETCH_INIT',
 });
 
 export const fetchSuccess = data => ({
   type: 'RECIPE_FETCH_SUCCESS',
-  payload: data.cocktails,
+  cocktails: data.cocktails,
 });
 
 export const fetchFailure = () => ({

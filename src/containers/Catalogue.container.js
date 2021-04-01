@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
 import style from '../assets/styles/Catalogue.css';
-import * as Actions from '../store/actions';
+import {
+  fetchInit,
+  fetchSuccess,
+  fetchFailure,
+  filterRecipes,
+  getCategories,
+} from '../store/actions';
 import Filter from '../components/Filter';
 import List from '../components/List';
 import {
@@ -26,6 +32,7 @@ const Catalogue = props => {
     getCategories,
   } = props;
 
+  console.log(categories);
   const handleFilter = e => {
     filterRecipes(e.target.innerText);
   };
@@ -80,12 +87,12 @@ const Catalogue = props => {
 
   return (
     <div className={style.container}>
-      { isError && <p className={style.message}>Something went terribly wrong. We are sorry.</p> }
-      { !filter && <p className={style.message}>Please Select A Category</p> }
+      { isError && <p className={style.message}>Something went terribly wrong. We are sorry.</p>}
+      { !filter && <p className={style.message}>Please Select A Category</p>}
       { isLoading
         ? <p className={style.message}>Loading Cocktail Recipes...</p>
-        : (<Filter categories={categories} handleFilter={handleFilter} />) }
-      { !isLoading && <List recipes={recipes} handleClick={handleClick} category={filter} /> }
+        : (<Filter categories={categories} handleFilter={handleFilter} />)}
+      { !isLoading && <List recipes={recipes} handleClick={handleClick} category={filter} />}
     </div>
   );
 };
@@ -114,28 +121,16 @@ Catalogue.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  recipes: state.data.recipes,
-  categories: state.categories,
-  filter: state.filter,
+  recipes: state.recipesReducer.data,
+  categories: state.categoriesReducer,
+  filter: state.filterReducer.filter,
   url: state.url,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchInit: () => {
-    dispatch(Actions.fetchInıt());
-  },
-  fetchSuccess: data => {
-    dispatch(Actions.fetchSuccess(data));
-  },
-  fetchFailure: () => {
-    dispatch(Actions.fetchFailure());
-  },
-  filterRecipes: category => {
-    dispatch(Actions.filterRecipes(category));
-  },
-  getCategories: categories => {
-    dispatch(Actions.getCategories(categories));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Catalogue);
+export default connect(mapStateToProps, {
+  fetchInit,
+  fetchSuccess,
+  fetchFailure,
+  filterRecipes,
+  getCategories,
+})(Catalogue);

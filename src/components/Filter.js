@@ -7,8 +7,8 @@ const Filter = ({ handleFilter, categories }) => (
     <h3 className={style.title}>Categories</h3>
     <ul className={style.list}>
       {
-        categories.map(category => (
-          <li key={category.idCategory}>
+        categories.data && categories.data.map(category => (
+          <li key={Math.floor((Date.now() * Math.random()))}>
             <span onClick={handleFilter} role="presentation">{category.strCategory}</span>
           </li>
         ))
