@@ -4,16 +4,16 @@ import Item from './Item';
 import style from '../assets/styles/List.css';
 
 const List = ({ recipes, handleClick, category }) => (
-  <div className={style.wrapper}>
-    <h3 className={style.title}>{category}</h3>
-    <div className={style.container}>
-      {
-        recipes.data && recipes.data.map(recipe => (
-          <Item key={recipe.idDrink} recipe={recipe} handleClick={handleClick} />
-        ))
-      }
+  <>
+    <div className={style.wrapper}>
+      <h3 className={style.title}>{category}</h3>
+      <div className={style.container}>
+        {
+          recipes && recipes.map(recipe => <Item key={recipe.idDrink} recipe={recipe} handleClick={handleClick} />) /* eslint-disable-line */
+        }
+      </div>
     </div>
-  </div>
+  </>
 );
 
 List.defaultProps = {

@@ -5,7 +5,6 @@ import Axios from 'axios';
 import PropTypes from 'prop-types';
 import style from '../assets/styles/Recipe.css';
 import {
-  fetchInit,
   fetchSuccess,
   fetchFailure,
 } from '../store/actions';
@@ -20,14 +19,11 @@ const Recipe = props => {
     recipe,
     isLoading,
     isError,
-    fetchInit,
     fetchSuccess,
     fetchFailure,
   } = props;
 
   const fetchRecipe = useCallBack(() => {
-    fetchInit();
-
     Axios.get(`${BASE}${LOOKUP_ID}${id}`)
       .then(result => {
         fetchSuccess(result.data);
@@ -35,7 +31,7 @@ const Recipe = props => {
       .catch(() => {
         fetchFailure();
       });
-  }, [fetchInit, fetchSuccess, fetchFailure, id]);
+  }, [fetchSuccess, fetchFailure, id]);
 
   React.useEffect(() => {
     fetchRecipe();
@@ -50,7 +46,7 @@ const Recipe = props => {
         const item = value.split('');
         item[0] = item[0].toUpperCase();
         ingredients.push(item.join(''));
-      } else if (key.includes('streMeasure') && value) {
+      } else if (key.includes('strMeasure') && value) {
         measures.push(value);
       }
     });
@@ -117,7 +113,6 @@ Recipe.propTypes = {
   recipe: PropTypes.objectOf(Object),
   isError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  fetchInit: PropTypes.func.isRequired,
   fetchFailure: PropTypes.func.isRequired,
   fetchSuccess: PropTypes.func.isRequired,
 };
@@ -130,4 +125,4 @@ const mapStateToProps = state => (
     url: state.urlReducer.url,
   });
 
-export default connect(mapStateToProps, { fetchInit, fetchSuccess, fetchFailure })(Recipe);
+export default connect(mapStateToProps, { fetchSuccess, fetchFailure })(Recipe);

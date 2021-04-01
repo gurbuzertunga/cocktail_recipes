@@ -13,13 +13,9 @@ export const getRecipe = id => ({
   id,
 });
 
-export const fetchInit = () => ({
-  type: 'RECIPE_FETCH_INIT',
-});
-
 export const fetchSuccess = data => ({
   type: 'RECIPE_FETCH_SUCCESS',
-  cocktails: data.cocktails,
+  cocktails: data.drinks,
 });
 
 export const fetchFailure = () => ({

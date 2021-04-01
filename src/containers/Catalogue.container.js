@@ -4,7 +4,6 @@ import Axios from 'axios';
 import PropTypes from 'prop-types';
 import style from '../assets/styles/Catalogue.css';
 import {
-  fetchInit,
   fetchSuccess,
   fetchFailure,
   filterRecipes,
@@ -19,12 +18,11 @@ import {
 
 const Catalogue = props => {
   const {
-    recipes,
+    cocktails,
     url,
     isError,
     isLoading,
     categories,
-    fetchInit,
     fetchSuccess,
     fetchFailure,
     filter,
@@ -32,9 +30,23 @@ const Catalogue = props => {
     getCategories,
   } = props;
 
-  console.log(categories);
+  const handleFetchRecipes = useCallback(
+    () => {
+      Axios.get(url)
+        .then(result => {
+          console.log(url);
+          fetchSuccess(result.data);
+        })
+        .catch(() => {
+          fetchFailure();
+        });
+    },
+    [url, fetchSuccess, fetchFailure],
+  );
+
   const handleFilter = e => {
     filterRecipes(e.target.innerText);
+    handleFetchRecipes(url);
   };
 
   const fetchCategories = useCallback(() => {
@@ -52,26 +64,7 @@ const Catalogue = props => {
     [filter, filterRecipes],
   );
 
-  const handleFetchRecipes = useCallback(
-    () => {
-      if (!url) {
-        return;
-      }
-
-      fetchInit();
-
-      Axios.get(url)
-        .then(result => {
-          fetchSuccess(result.data);
-        })
-        .catch(() => {
-          fetchFailure();
-        });
-    },
-    [url, fetchInit, fetchSuccess, fetchFailure],
-  );
-
-  const handleClick = () => fetchInit();
+  const handleClick = data => console.log(data);
 
   React.useEffect(() => {
     handleFilterSelect();
@@ -92,13 +85,13 @@ const Catalogue = props => {
       { isLoading
         ? <p className={style.message}>Loading Cocktail Recipes...</p>
         : (<Filter categories={categories} handleFilter={handleFilter} />)}
-      { !isLoading && <List recipes={recipes} handleClick={handleClick} category={filter} />}
+      { !isLoading && <List recipes={cocktails} handleClick={handleClick} category={filter} />}
     </div>
   );
 };
 
 Catalogue.defaultProps = {
-  recipes: [],
+  cocktails: [],
   url: '',
   categories: [],
   filter: '',
@@ -107,12 +100,11 @@ Catalogue.defaultProps = {
 };
 
 Catalogue.propTypes = {
-  recipes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  cocktails: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   url: PropTypes.string,
   isError: PropTypes.bool,
   isLoading: PropTypes.bool,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  fetchInit: PropTypes.func.isRequired,
   fetchFailure: PropTypes.func.isRequired,
   fetchSuccess: PropTypes.func.isRequired,
   filter: PropTypes.string,
@@ -121,14 +113,13 @@ Catalogue.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  recipes: state.recipesReducer.data,
+  cocktails: state.recipesReducer.cocktails,
   categories: state.categoriesReducer,
   filter: state.filterReducer.filter,
-  url: state.url,
+  url: state.urlReducer.url,
 });
 
 export default connect(mapStateToProps, {
-  fetchInit,
   fetchSuccess,
   fetchFailure,
   filterRecipes,

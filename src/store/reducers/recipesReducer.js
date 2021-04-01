@@ -1,21 +1,18 @@
 const initialState = {
-  data: {},
+  cocktails: [],
+  isLoading: true,
+  isError: false,
 };
 
 const recipesReducer = (state = initialState, action) => {
+  console.log(action.cocktails);
   switch (action.type) {
-    case 'RECIPE_FETCH_INIT':
-      return {
-        ...state,
-        isLoading: true,
-        isError: false,
-      };
     case 'RECIPE_FETCH_SUCCESS':
       return {
         ...state,
+        cocktails: action.cocktails,
         isLoading: false,
         isError: false,
-        recipes: action.cocktails,
       };
     case 'RECIPE_FETCH_FAILURE':
       return {

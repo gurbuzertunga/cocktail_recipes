@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const urlReducer = (state = initialState, action) => {
+  console.log(action.category);
   switch (action.type) {
     case 'FILTER':
       return {
