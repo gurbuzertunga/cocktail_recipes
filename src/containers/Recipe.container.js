@@ -1,4 +1,4 @@
-import React, { useCallBack } from 'react';
+import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Axios from 'axios';
@@ -23,7 +23,7 @@ const Recipe = props => {
     fetchFailure,
   } = props;
 
-  const fetchRecipe = useCallBack(() => {
+  const fetchRecipe = useCallback(() => {
     Axios.get(`${BASE}${LOOKUP_ID}${id}`)
       .then(result => {
         fetchSuccess(result.data);
@@ -119,9 +119,9 @@ Recipe.propTypes = {
 
 const mapStateToProps = state => (
   {
-    isLoading: state.data.isLoading,
-    isError: state.data.isError,
-    recipe: state.data.recipes[0],
+    isLoading: state.recipesReducer.isLoading,
+    isError: state.recipesReducer.isError,
+    recipe: state.recipesReducer.cocktails[0],
     url: state.urlReducer.url,
   });
 

@@ -34,7 +34,6 @@ const Catalogue = props => {
     () => {
       Axios.get(url)
         .then(result => {
-          console.log(url);
           fetchSuccess(result.data);
         })
         .catch(() => {

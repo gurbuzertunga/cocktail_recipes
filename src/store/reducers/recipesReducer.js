@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const recipesReducer = (state = initialState, action) => {
-  console.log(action.cocktails);
   switch (action.type) {
     case 'RECIPE_FETCH_SUCCESS':
       return {
