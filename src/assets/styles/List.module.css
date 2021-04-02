@@ -1,7 +1,12 @@
 .container {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 2rem;
+}
+
+.container > * {
+  flex: 1 0 30%;
 }
 
 .wrapper {

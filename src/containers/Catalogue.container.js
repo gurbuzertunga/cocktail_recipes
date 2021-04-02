@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 import PropTypes from 'prop-types';
-import style from '../assets/styles/Catalogue.css';
+import style from '../assets/styles/Catalogue.module.css';
 import {
   fetchSuccess,
   fetchFailure,
@@ -79,11 +79,13 @@ const Catalogue = props => {
 
   return (
     <div className={style.container}>
+      <div className={style.imageContainer}>
+        <h4 className={style.title}>GET DRUNK IN STYLE</h4>
+      </div>
       { isError && <p className={style.message}>Something went terribly wrong. We are sorry.</p>}
-      { !filter && <p className={style.message}>Please Select A Category</p>}
       { isLoading
         ? <p className={style.message}>Loading Cocktail Recipes...</p>
-        : (<Filter categories={categories} handleFilter={handleFilter} />)}
+        : (<Filter categories={categories} handleFilter={handleFilter} className={style.cont} />)}
       { !isLoading && <List recipes={cocktails} handleClick={handleClick} category={filter} />}
     </div>
   );

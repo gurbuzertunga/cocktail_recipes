@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  margin-left: 2rem;
+  justify-content: space-evenly;
+}
+
+.title, .infoData {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  font-size: x-large;
+  color: purple;
+}
+
+.infoData {
+  font-size: larger;
+}
+
+.theader th, td {
+  padding: 0.5rem;
+  margin: 0;
+  border: 1px groove black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.theader th {
+  background-color: rgba(169, 169, 169, 0.51);
+}
+
+td {
+  background-color: rgba(167,0,247,0.51);
+  font-weight: 700;
+}
+
+.picture {
+  margin-top: 3rem;
+  border: 1px solid transparent;
+  border-radius: 15%;
+  width: 75%;
+}
+
+.instructions{
+  color: black;
+  font-weight: 600;
+  background-color: rgba(169, 169, 169, 0.75);
+  padding: 0.5rem;
+  border: 1px solid gh;
+  font-family: 'Montserrat', sans-serif;
+}

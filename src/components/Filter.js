@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from '../assets/styles/Filter.css';
+import style from '../assets/styles/Filter.module.css';
 
 const Filter = ({ handleFilter, categories }) => (
   <section className={style.container}>

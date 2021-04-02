@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.container p a {
+  margin-left: 0.5rem;
+} 

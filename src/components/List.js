@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
-import style from '../assets/styles/List.css';
+import style from '../assets/styles/List.module.css';
 
 const List = ({ recipes, handleClick, category }) => (
   <>

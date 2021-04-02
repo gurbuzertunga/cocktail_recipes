@@ -1,22 +1,19 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import cocktailRecipes from '../assets/images/cocktailrecipes.png';
-import style from '../assets/styles/Header.css';
+// import cocktailRecipes from '../assets/images/cocktailrecipes.png';
+import style from '../assets/styles/Header.module.css';
 
 const NavBar = ({ history }) => {
   const id = history.location.pathname;
   console.log(id);
   return (
-    <nav className={
-      id === '/' ? style.container : `${style.container}`
-    }
-    >
-      <div className="logo">
-        <img className={style.logo} src={cocktailRecipes} alt="Cocktail Recipes Logo" />
+    <nav className={style.container}>
+      <div className={style.logoContainer}>
+        <h4>COCTAIL RECIPES</h4>
       </div>
       <div className="links">
-        <ul className="style.list">
+        <ul className={style.list}>
           <Link to="/">
             <li>Home</li>
           </Link>
