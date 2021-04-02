@@ -1,5 +1,6 @@
 .item {
   margin-right: 0.5rem;
+  cursor: pointer;
   border: 1px solid black;
 }
 

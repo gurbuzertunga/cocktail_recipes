@@ -1,11 +1,12 @@
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container p {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .container p a {

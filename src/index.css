@@ -23,9 +23,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: black;
   background-image: url('./assets/images/main-bg.jpg');
-
-  /* background: rgb(35,2,51);
-  background: linear-gradient(180deg, rgb(63,8,76) 0%, rgba(17,16,47,1) 15%, rgba(17,16,47,1) 90%, rgb(63,8,76) 100%); */
   background-size: cover;
   background-repeat: no-repeat;
 }
