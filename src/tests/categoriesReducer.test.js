@@ -8,7 +8,7 @@ const initialState = {
 describe('categoriesReducer', () => {
   it(`returns the action payload (array of categories)
     when passed an action of type "CATEGORIES"`, () => {
-    expect(categoriesReducer(initialState,  getCategories([]))).toEqual({"data": []});
+    expect(categoriesReducer(initialState, getCategories([]))).toEqual({ data: [] });
   });
 
   it('returns the state if the action is not "CATEGORIES"', () => {
@@ -16,7 +16,6 @@ describe('categoriesReducer', () => {
   });
 
   it('returns an empty array if state is undefined and the action is not "CATEGORIES"', () => {
-    expect(categoriesReducer(undefined, { type: 'OTHER' })).toEqual({"data": []});
+    expect(categoriesReducer(undefined, { type: 'OTHER' })).toEqual({ data: [] });
   });
-
 });

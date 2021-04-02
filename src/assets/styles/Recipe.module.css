@@ -4,7 +4,8 @@
   justify-content: space-evenly;
 }
 
-.title, .infoData {
+.title,
+.infoData {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -17,7 +18,8 @@
   font-size: larger;
 }
 
-.theader th, td {
+.theader th,
+td {
   padding: 0.5rem;
   margin: 0;
   border: 1px groove black;
@@ -29,7 +31,7 @@
 }
 
 td {
-  background-color: rgba(167,0,247,0.51);
+  background-color: rgba(167, 0, 247, 0.51);
   font-weight: 700;
 }
 
@@ -40,7 +42,7 @@ td {
   width: 75%;
 }
 
-.instructions{
+.instructions {
   color: black;
   font-weight: 600;
   background-color: rgba(169, 169, 169, 0.75);

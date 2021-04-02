@@ -42,10 +42,9 @@ describe('recipesReducer', () => {
   it(`returns initial state if it us undefined
   and the action type is not one expected`, () => {
     expect(recipesReducer(undefined, { type: 'OTHER' })).toEqual({
-         "cocktails": [],
-         "isError": false,
-         "isLoading": true,
-       });
+      cocktails: [],
+      isError: false,
+      isLoading: true,
+    });
   });
-
 });

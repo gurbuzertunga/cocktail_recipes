@@ -63,7 +63,7 @@ const Catalogue = props => {
     [filter, filterRecipes],
   );
 
-  const handleClick = data => console.log(data);
+  const handleClick = data => console.log(data);  // eslint-disable-line
 
   React.useEffect(() => {
     handleFilterSelect();

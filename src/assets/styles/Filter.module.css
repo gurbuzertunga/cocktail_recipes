@@ -1,11 +1,11 @@
 .title {
- font-family: 'Montserrat', sans-serif; 
- font-weight: 600;
- color: black;
- border-bottom: 3px solid purple;
- width: 7%;
- padding-bottom: 0.2rem;
- margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+  border-bottom: 3px solid purple;
+  width: 7%;
+  padding-bottom: 0.2rem;
+  margin: 0 auto;
 }
 
 .list {
@@ -26,4 +26,3 @@
 .list li span {
   color: black;
 }
-

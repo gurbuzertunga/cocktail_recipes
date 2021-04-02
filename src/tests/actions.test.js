@@ -63,5 +63,4 @@ describe('State actions', () => {
       expect(fetchFailure().type).toEqual('RECIPE_FETCH_FAILURE');
     });
   });
-
 });
