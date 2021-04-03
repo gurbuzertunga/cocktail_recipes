@@ -15,6 +15,7 @@ import {
   BASE,
   LOOKUP_CATS,
 } from '../services/cocktailsdb';
+import NotFound from '../components/404';
 
 const Catalogue = props => {
   const {
@@ -82,7 +83,7 @@ const Catalogue = props => {
       <div className={style.imageContainer}>
         <h4 className={style.title}>GET DRUNK IN STYLE</h4>
       </div>
-      { isError && <p className={style.message}>Something went terribly wrong. We are sorry.</p>}
+      { isError && <NotFound /> }
       { isLoading
         ? <p className={style.message}>Loading Cocktail Recipes...</p>
         : (<Filter categories={categories} handleFilter={handleFilter} className={style.cont} />)}
