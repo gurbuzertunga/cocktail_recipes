@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+.container p a {
+  margin-left: 0.5rem;
+}

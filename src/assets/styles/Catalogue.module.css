@@ -1,0 +1,20 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer h4,
+.container p {
+  align-self: center;
+  font-size: x-large;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 3px 1px 0 darkgray;
+}
+
+.image {
+  width: 55%;
+  box-shadow: 10px 13px 14px 1px rgba(35, 2, 51, 1);
+  border: 3px solid #3e084b;
+  border-radius: 2%;
+  margin: 0 5rem;
+}

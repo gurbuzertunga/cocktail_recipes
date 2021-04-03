@@ -1,0 +1,29 @@
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: black;
+  border-bottom: 3px solid purple;
+  width: 7%;
+  padding-bottom: 0.2rem;
+  margin: 0 auto;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.list li {
+  padding: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+  flex: 1 0 25%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background-color: rgba(169, 169, 169, 0.61);
+}
+
+.list li span {
+  color: black;
+}
