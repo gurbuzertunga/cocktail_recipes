@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Cocktail Recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React web application where you can navigate through different cocktail categories and get the recipe for any of them, along with an image, ingredients, and instructions. Each recipe is loaded with a URL displaying the recipe ID.
 
-## Available Scripts
+Design belongs to me.
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+[View Live Demo](https://get-drunk-fast.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![screenshot](./public/screenshot.png)
 
-### `npm test`
+![screenshot](./public/screenshot2.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Video Presentation
 
-### `npm run build`
+[Visit video presentation](https://drive.google.com/file/d/11ULhlZU65kQROjNEIuU1fil_n8cR4OqU/view?usp=sharing)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features & Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- A list of available cocktail categories is displayed initially.
+- You see a list of recipes within a selected category.
+- When a recipe from the results is clicked a new component with the recipe details is loaded. The URL changes and will include the recipe's ID.
+- In the recipe view, you have the name of the recipe, ingredients and quantities, an image, and written instructions.
+- You can navigate back to the home page, and still see the previously selected category.
+- Design is partially responsive although not completely optimized for smartphones.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Potential Features
 
-### `npm run eject`
+- Filter by ingredients.
+- Add layout for smaller devices.
+- Search by cocktail/ingredient name.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone this repository and access the project's directory.
+2. Run "npm install".
+3. Run "npm test" to run the tests.
+4. Run "npm start" to work on the development server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- JavaScript/ES6
+- Jest
+- React
+- React Hooks
+- React Router
+- Redux
+- React Redux
+- CocktailsDB API
+- Netlify
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Gürbüz Ertunga**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
+- Twitter: [@dantewuhu](https://twitter.com/dantewuhu)
+- Linkedin: [GurbuzErtunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
 
-### Code Splitting
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions, issues and feature requests are welcome!
 
-### Analyzing the Bundle Size
+Feel free to check the [issues page](https://github.com/gurbuzertunga/cocktail_recipes/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
